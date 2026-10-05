@@ -1,2 +1,9 @@
-# Csop
-EKLB_DFKM009 Csoportos Projektlabor 1. - L003:
+# (Projekt neve)
+
+(Projekt leírása)
+
+(Instrukciók program futtatásához)
+
+[Git Guide](GIT_GUIDE.md)
+
+stb.
