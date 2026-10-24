@@ -13,7 +13,7 @@ Windows Modbus Explorer -> WSL TCP relay (:1503) -> Windows MATLAB PLC (:1502)
                       TShark -> rules -> CSV log -> dashboard
 ```
 
-- Keep the existing MATLAB project, server panel, and Explorer on Windows.
+- Keep the MATLAB project in `PLC/`, server panel, and Explorer on Windows.
 - In WSL, run a TCP relay, TShark, a small Python rules/logger, and Streamlit.
 - Explorer connects through the relay so the traffic actually passes through
   Linux. Direct Windows-to-Windows loopback traffic is not our capture path.

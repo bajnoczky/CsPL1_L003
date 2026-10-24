@@ -22,14 +22,15 @@ current local demo.
 
 ## Start the server panel
 
-Open **VirtualOTLab.prj** in MATLAB, or run from the repository folder:
+Open **PLC/VirtualOTLab.prj** in MATLAB, or run from the repository folder:
 
 ```matlab
-openProject('VirtualOTLab.prj')
+openProject('PLC/VirtualOTLab.prj')
 plc_panel
 ```
 
-Opening the project adds `matlab` to the path. You can also use its **Open PLC
+Opening the project sets its working folder to `PLC` and adds `PLC/matlab`
+to the path. You can also use its **Open PLC
 panel** shortcut. No manual `addpath` is required, and opening the project
 does not start the server.
 
@@ -69,7 +70,8 @@ Choose Modbus TCP/IP and configure:
 | Byte order | Big Endian |
 
 Click **Read**, then **Confirm Parameters**. Click **Import** and select
-**config/tank_registers.mat** to load all four named registers. Import replaces
+**PLC/config/tank_registers.mat** (relative to the repository root) to load all
+four named registers. Import replaces
 the existing read table. Click **Resume Reads** for live values and plots.
 
 You can edit each row's **Name** column and use **Export** to save your table.
@@ -110,16 +112,16 @@ unit IDs are ignored. An invalid MBAP header blocks processing until reconnect.
 
 | Location | Purpose |
 | --- | --- |
-| `matlab/plc_panel.m` | Server controls and tank display |
-| `matlab/TankServer.m` | TCP connection, timing, and request handling |
-| `matlab/TankPLC.m` | Tank model, pump logic, and Modbus protocol subset |
-| `matlab/export_register_map.m` | Regenerate the Explorer import file |
-| `config/tank_registers.mat` | Named registers for Explorer |
-| `VirtualOTLab.prj`, `resources/project/` | MATLAB project paths, files, and shortcut |
+| `PLC/matlab/plc_panel.m` | Server controls and tank display |
+| `PLC/matlab/TankServer.m` | TCP connection, timing, and request handling |
+| `PLC/matlab/TankPLC.m` | Tank model, pump logic, and Modbus protocol subset |
+| `PLC/matlab/export_register_map.m` | Regenerate the Explorer import file |
+| `PLC/config/tank_registers.mat` | Named registers for Explorer |
+| `PLC/VirtualOTLab.prj`, `PLC/resources/project/` | MATLAB project paths, files, and shortcut |
 | `TEAM_PLAN.md` | Remaining work and proposed WSL2 architecture |
 
 Keep the project XML metadata and register-map MAT file in Git; they are
-required project assets. Local scratch output, root log files, editor backups,
+required project assets. Local scratch output, log files, editor backups,
 and workspace dumps are ignored. To regenerate the register map, open the
 project and run `export_register_map`.
 

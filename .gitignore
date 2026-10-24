@@ -2,13 +2,13 @@
 *.asv
 *.m~
 *.autosave
-/MATLAB.mat
+MATLAB.mat
 
 # Local scratch work, logs, screenshots, and process IDs.
-/.local/
-/*.log
-/matlab_crash_dump*
-/hs_err_pid*
+.local/
+*.log
+matlab_crash_dump*
+hs_err_pid*
 
 # Operating-system thumbnails and folder settings.
 .DS_Store
